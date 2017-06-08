@@ -1,0 +1,70 @@
+Team Name:
+    Womack's Wombats
+
+Members:
+    Greg Benton
+    Mike Barlow
+    Erin Ruby
+    Sofia Mehrotra
+    Rasheeq Jahan
+
+Description:
+       
+
+Vision Statement:
+    
+
+Software Development Methodolgy:
+    We will use the Agile methodology
+
+Collaboration Tool: 
+    Slack (and possibly Trello if it proves useful)
+
+
+
+Software Dev Project - Recipe Search Site
+
+Team Name:
+    Womack's Wombats
+
+Members:
+    Greg Benton
+    Mike Barlow
+    Erin Ruby
+    Sofia Mehrotra
+    Rasheeq Jahan
+
+Description:  
+    Website that takes input ingredients and searches a database for possible recipes corresponding to the available ingredients.  The database will contain ingredient keywords and our inputs must match those ingredients.  Our website could also include the following features:  
+    recipe ratings, ranking recipes based on the closest match to the provided input ingredients, updating search results based on number of times user searches for recipes.  
+
+    Ideally we will develop a simple service that can be accessed from any browser, with a fairly minimal and straightforward interface. By offering potential meals one at a time with a simple yes or no for each recipe we will give users a quick and helpful way of combating their culinary indecisiveness.
+
+    We will use mySQL or MongoDB for our database, AWS for our host, our language will be Python, Django for our development framework, Github for version control, Docker for containerization and portability across multiple web-services, Slack/Trello for our collaboration tool, and TwitterBootstrap for our front-end.  Javascript can send information to the server.  
+
+Vision Statement:
+
+    To simplify meal time; by giving users a series of options we want users to find creative ways to use their food, not waste it.
+
+Motivation:
+    This project will require using tools that will develop the knowledge and skills this course aims to cultivate, while having a scope that is reasonable for successful completion in the time available.
+
+    Practically we hope to develop a fun and easy to use tool that will help people answer the age old question: what's for dinner?
+
+Risks:  
+    Loading the recipe database into our program, experience in developing large scale project, natural language processing regarding the user’s input depending on varying levels of experience with search engines, size of usable data, parsing input string from user then process that input according to the database, then delivering the result back to the user. 
+
+Risk Mitigation Plan:
+    By setting consistent and acheivable deadlines and clearly distributing tasks that play to our respective strenghts we can hold one another accountable and not fall behind. With this being such a short course we need to stick to a somewhat rapid schedule.
+
+    In order to begin moving on the project in earnest we will start with a simple database to prove the concept and get the program working before scaling up.
+
+Version Control:
+    We will be using GITHUB as our version control monitor.
+    (Repository and access to follow)
+
+Methodology:
+    We hope to stick to an Agile workflow. Given the time constraints and our lack of experience in a development setting we will need to be responsive to unforseen challenges and able to pivot/adapt when necessary, so the flexibility of Agile will be useful.
+
+Collaboration Tool:
+    We will be using Slack as our primary form of communication. A Trello board has been set up as well, which we will continue to use if it proves useful.

@@ -1,0 +1,15 @@
+Software Dev Project - Recipe Search Site
+
+Team:  Michael, Erin, Sofie, Greg, Rasheeq
+
+Description:  Website that takes input ingredients and searches a database for possible recipes corresponding to the available ingredients.  The database will contain ingredient keywords and our inputs must match those ingredients.  Our website could also include the following features:  
+recipe ratings, ranking recipes based on the closest match to the provided input ingredients, updating search results based on number of times user searches for recipes.  
+
+We will use mySQL for our database, AWS for our host, our language will be Python, Flask for our development framework, Github for version control, Docker for containerization and portability across multiple web-services, Slack/Trello for our collaboration tool, and TwitterBootstrap for our front-end.  Javascript can send information to the server.  
+
+Vision Statement:
+We would like to create a search engine for recipes that would allow the user to easily find the recipe that fits the limitations of the ingredients.  We hope that our program will be fun to use for everyone.
+
+Motivation: 
+
+Risks:  Loading the recipe database into our program, experience in developing large scale project, natural language processing regarding the user’s input depending on varying levels of experience with search engines, size of usable data, parsing input string from user then process that input according to the database, then delivering the result back to the user.  

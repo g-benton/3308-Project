@@ -1,27 +1,3 @@
-Team Name:
-    Womack's Wombats
-
-Members:
-    Greg Benton
-    Mike Barlow
-    Erin Ruby
-    Sofia Mehrotra
-    Rasheeq Jahan
-
-Description:
-       
-
-Vision Statement:
-    
-
-Software Development Methodolgy:
-    We will use the Agile methodology
-
-Collaboration Tool: 
-    Slack (and possibly Trello if it proves useful)
-
-
-
 Software Dev Project - Recipe Search Site
 
 Team Name:

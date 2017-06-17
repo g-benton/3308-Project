@@ -1,0 +1,7 @@
+app/.env
+app/data/
+./*.txt
+*.pdf
+*.PDF
+milestone2_notes
+milestone1_proposal_draft

@@ -1,7 +1,3 @@
-app/.env
-app/data/
-./*.txt
-*.pdf
-*.PDF
-milestone2_notes
-milestone1_proposal_draft
+.DS_Store
+/.env
+db_data

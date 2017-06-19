@@ -3,21 +3,26 @@ version: '3'
 services:
   db:
     image: mysql:latest
+    volumes:
+      - ./db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root_pw
       MYSQL_DATABASE: recipe_db
       MYSQL_USER: db_user1
       MYSQL_PASSWORD: user1pw
+    ports:
+      - "3306:3306"
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/usr/src/app
+      - ./app:/usr/src/app
+    env_file:
+      - env_web
     ports:
       - "8000:8000"
     depends_on:
       - db
     links:
       - db
-    env_file: .env
+    command: ["./wait-for-it.sh", "db:3306", "--timeout=20", "--", "python", "manage.py", "runserver", "0.0.0.0:8000"]

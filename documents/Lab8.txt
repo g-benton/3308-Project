@@ -1,0 +1,35 @@
+Erin Ruby
+Greg Benton
+Sofie Mehrotra
+Rasheeq Jahan
+Michael Barlow
+
+SNIPPET 1 ***************************************************************
+More descriptive variable/function names. Functions and variable names should
+   let the user know exactly what they are doing and what is being stored
+   in the variable.
+line 17: ; shouldn't be used in python to do multiple function initializations
+   on the same line
+line 19: don't hard code in a file path, should be passed in as a command line
+   argument
+line 20: pointless dictionary of tuples, should just be a list.
+line 29: the if statement should be a for loop through all the files
+line 43: The print statement should not be commented out
+line 44: self.i was never set because the ci function in which it is declared
+   and set was never called in the r function
+
+SNIPPET 2 ***************************************************************
+line 21: self.path needs to be defined
+line 29: the 'if json' at the end is redundant
+line 30: the new list will stop at the 'if not json'. Should check if the json files
+   are in self.before or state_change.
+line 54: need if __name__ == '__main__':
+line 59: there is no way to exit from the while loop, it will go on forever
+
+SNIPPET 3 ***************************************************************
+There should be more comments to explain what is happening in the code.
+line 18: before gets overridden on line 22.
+line 21: the path should be read in as a command line argument
+line 22: not using the full functions of a dictionary (key, value), so can just
+   be a list.
+line 36: iterates over just the keys, not the values

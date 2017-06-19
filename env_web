@@ -1,0 +1,8 @@
+# Add Environment Variables
+DB_NAME=recipe_db
+DB_USER=root
+DB_PASS=root_pw
+DB_SERVICE=db
+DB_HOST=db
+DB_PORT=3306
+START_CMD=python manage.py runserver 0.0.0.0:8000

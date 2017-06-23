@@ -1,0 +1,236 @@
+/*https://codepen.io/menzer/pen/geAto*/
+/***********************
+ * Essential Structure *
+ ***********************/
+*,
+*:before;
+*:after{
+	margin: 0;
+	padding: 0;
+}
+header{
+	display: block;
+	width: 100%;
+}
+ .headimg{
+	/*margin: 0 auto;*/
+	width:100%;
+	display: flex;
+	/*padding: 1%;*/
+}
+button {
+	/*position: absolute; /*overlay the button on top of header img*/*/
+   background-color: #829488; /* Green */
+   border: none;
+   color: black;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 20px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+}
+button:hover{
+	background-color: #363D38; /* Green */
+    color: white;
+}
+ .page-wrapper {
+	 max-width: 100%;
+	 margin: 0 auto;
+	 /*display: flex;*/
+	 align-content: center;
+ }
+
+body {
+	width: 100%;
+   height: 100%;
+   margin: 0;
+   /*padding: 10px;*/
+	background-color: #9BB1A3;
+}
+
+h1 {
+	/*You Hungry*/
+	text-align: center;
+	/*margin-left: 450px;*/
+	margin-top: 45px;
+	font-family: 'Helvetica', sans-serif;
+	font-size: 4em;
+	color: #EEC1A0;
+
+}
+p {
+	display: flex;
+	text-align: center;
+	margin-top: 8%;
+	font-family: 'Helvetica', sans-serif;
+	font-size: 45px;
+	color: #EEC1A0;
+
+}
+
+.flexsearch--wrapper {
+	display: flex;
+	/*align-content: center;*/
+	height: auto;
+	width: auto;
+	/*max-width: 90%;*/
+	/*overflow: hidden;*/
+	background: transparent;
+	margin: 0;
+	position: static;
+}
+
+.flexsearch--form {
+	/*overflow: hidden;*/
+	position: relative; /* keeps the arrow inside the search bar*/
+}
+
+.flexsearch--input-wrapper {
+	padding: 0 66px 0 0; /* Right padding for submit button width */
+	/*overflow: hidden;*/
+}
+
+.flexsearch--input {
+  	width: 90%;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+.flexsearch {
+  padding: 0 25px 0 25px; /* Padding for other horizontal elements */
+}
+/***********************
+		search bar
+***********************/
+.flexsearch--input {
+  -webkit-box-sizing: content-box;
+	/*-moz-box-sizing: content-box;*/
+	/*box-sizing: content-box;*/
+ 	/*height: 100px;*/
+	/*align-content: left;*/
+  	padding: 2em 10em 0 4em;
+	border-color: #BC8F8F;
+  	border-radius: 35px;
+  	border-style: solid;
+	border-width: 5px;
+	/*top: 50%;*/
+	/*left: 50%;*/
+  	/*margin-top: 230px;*/
+	/*margin-left: 50px;*/
+	/*margin-right: 5%;*/
+  	color: #728278; /*color for font when typing ingredients*/
+  	font-family: 'Helvetica', sans-serif;
+	font-size: 2em;
+	/*-webkit-appearance: none;*/
+	/*-moz-appearance: none;*/
+	display: flex;
+	align-content: left;
+
+}
+/***********************
+		submit arrow
+***********************/
+.flexsearch--submit {
+  	position: absolute;
+	/*align-content: right;*/
+	right: auto;
+	top: 0;
+	display: block;
+	margin-left: 120%; /*makes the arrow on the right*/
+	width: 10%;
+	height: 100%;
+  	padding: 0;
+  	border: none;
+  	margin-right: 10%; /* border-width */
+	background: transparent;
+  	color: #C95078; /*arrow submit color */
+  	font-family: 'Helvetica', sans-serif;
+  	font-size: 40px;
+  	line-height: 50px;
+}
+
+.flexsearch--input:focus {
+  outline: none;
+  border-color: #BC8F8F;
+  /*text-align: left;*/
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+ 	color: #BC8F8F;
+	text-align: left;
+
+}
+
+.flexsearch--submit:hover {
+  color: #883651; /*color of arrow when you hover over it*/
+  cursor: pointer;
+  /*text-align: left;*/
+
+}
+
+::-webkit-input-placeholder {
+	color: #728278; /*the initial search text inside the bar*/
+	text-align: left;
+	line-height: 100%;
+	margin-left: 10%;
+
+}
+
+input:-moz-placeholder {
+  color: #4F747D;
+  text-align: left;
+  line-height: 50px;
+  margin-left: 10%;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #FFEAEA;
+    margin: auto ; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+	 background-color: inherit;
+
+}
+
+.close:hover,
+.close:focus {
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+.no{
+	margin: 10% auto; /* 10% from the top and centered */
+	background-color: inherit;
+}
+.ya{
+	margin-right: auto; /* 10% from the top and centered */
+	background-color: inherit;
+
+}

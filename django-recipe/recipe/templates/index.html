@@ -9,7 +9,6 @@
 
   <title>RECIPE</title>
 
-  <!-- FIXME: Favicon does not show up -->
   <link rel="icon" href="{% static 'img/icon.ico' %}"/>
 
 
@@ -45,7 +44,7 @@
                   <!-- The submit -->
                   <input class="flexsearch--submit" type="submit" value=""/>
                   <!-- The arrow button -->
-				      <input id="myBtn" class="flexsearch--submit" type="button" value="&#10140;" />
+				      <input id="myBtn" class="flexsearch--submit" type="submit" value="&#10140;" />
                      {% if user_input %}
                      <div id="myModal" class="modal">
                         <!-- Modal content -->
@@ -59,7 +58,7 @@
                            <script type="text/javascript">
                               var modal = document.getElementById('myModal');
                               modal.style.display = "block";
-                              </script>
+                           </script>
                            {% endif %}
                      </div>
                </div>

@@ -48,6 +48,7 @@ body {
    margin: 0;
    /*padding: 10px;*/
 	background-color: #9BB1A3;
+
 }
 
 h1 {
@@ -216,9 +217,7 @@ input:-moz-placeholder {
     font-size: 20px;
     font-weight: bold;
 	 background-color: inherit;
-
 }
-
 .close:hover,
 .close:focus {
     color: grey;
@@ -227,10 +226,16 @@ input:-moz-placeholder {
 }
 .no{
 	margin: 10% auto; /* 10% from the top and centered */
-	background-color: inherit;
+	background: none;
+/*
+	background-color: #FFEAEA;
+	background-clip: inherit;*/
 }
 .ya{
 	margin-right: auto; /* 10% from the top and centered */
-	background-color: inherit;
-
+	background: none;
+/*
+	background-color: #FFEAEA;
+	background-clip: inherit;
+	background: none;*/
 }

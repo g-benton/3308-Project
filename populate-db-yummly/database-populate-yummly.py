@@ -39,6 +39,15 @@ yummly = Client(api_id="98bc9cb0", api_key="8ee53c9ae94336719dfbed1bb6a5c50a",
 # main script
 #######################
 
+#####################
+# wipe database
+#####################
+main_cursor = db_conn.cursor()
+main_cursor.execute("truncate recipes;")
+main_cursor.execute("truncate ingredients;")
+main_cursor.execute("truncate recipe_ingredients;")
+
+
 #### list of meals to search through
 meal_list = ['breakfast', 'lunch', 'dinner']
 
@@ -58,21 +67,21 @@ for meal in meal_list:
         if (not item_found(db_conn, "recipes", name)):
             insert_recipe(db_conn, recipe)
             # print("inserted")
-        # else:
-             # print("found")
-        #retrieve the id (used for ingredient insertion)
-        recipe_id = get_id(db_conn, "recipes", name)
-
-        # now iterate through the ingredients of the recipe
-        for ingred in recipe.ingredients:
-                # if the recipe is not in the database then add it
+            recipe_id = get_id(db_conn, "recipes", name)
+            for ingred in recipe.ingredients:
+                # if the ingredient is not in the database then add it
                 if (not item_found(db_conn, "ingredients", ingred)):
                     insert_ingredient(db_conn, ingred)
 
                 # get the ingredient id from the db
                 ingred_id = get_id(db_conn, "ingredients", ingred)
+                # print(ingred_id)
                 #add the recipe ingredient connection to the database
                 insert_recipe_ingredient(db_conn, recipe_id, ingred_id)
+
+        #retrieve the id (used for ingredient insertion)
+
+        # now iterate through the ingredients of the recipe
 
 #######################
 # Clean up and close connection

@@ -3,7 +3,7 @@ def item_found( conn ,table,  name) :
     name = name.encode('utf-8')
     name = name.replace("'", '')
     call = "SELECT name FROM %s WHERE( name = '%s');" % ( table, name)
-    print(call)
+    # print(call)
     # generate cursor and execute
     cur = conn.cursor()
     cur.execute(call)
@@ -59,6 +59,9 @@ def insert_recipe(conn, recipe):
 def insert_recipe_ingredient(conn, recipe_id, ingredient_id):
     # pretty strightforward sql instructions
     cur = conn.cursor()
+    call = ("INSERT INTO recipe_ingredients(recipe_id, ingredient_id)"
+        " VALUES('%s', '%s');" % (recipe_id, ingredient_id))
+    print (call)
     cur.execute( ("INSERT INTO recipe_ingredients(recipe_id, ingredient_id)"
         " VALUES('%s', '%s');" % (recipe_id, ingredient_id)) )
 

@@ -31,15 +31,13 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = (
-    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hello',
-    'recipes.apps.RecipesConfig'
+    'recipe.apps.RecipeConfig'
 )
 
 MIDDLEWARE_CLASSES = (

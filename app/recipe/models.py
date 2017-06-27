@@ -3,7 +3,7 @@ from django.db import models
 
 class Recipe(models.Model):
     """Base model for a recipe."""
-    
+
     name = models.CharField(max_length=200)
     yummly_id = models.CharField(max_length=1000)
     # text = models.CharField(max_length=1000)
@@ -13,10 +13,10 @@ class Recipe(models.Model):
 
 class Ingredient(models.Model):
     """Base model for a recipe ingredient."""
-    
+
     name = models.CharField(max_length=200)
-    recipe = models.ManyToManyField(Recipe)
-        
+    recipe = models.ManyToManyField("Recipe")
+
 # TODO: add measurement model
 #   - should create a relations with recipe_id, ingredient_id, & quantity_id
 #   - uncomment below to implement
@@ -33,5 +33,5 @@ class Measurment(models.Mod):
 
     # will need to check decimal value to convert to human readable values
     # e.g. *.333 -> 1/3, 0.425 -> 5/8, ...
-    quantity = models.DecimalField(max_digits=6, 
+    quantity = models.DecimalField(max_digits=6,
 '''

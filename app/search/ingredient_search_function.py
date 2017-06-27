@@ -10,6 +10,7 @@ from recipe.models import Ingredient, Recipe
 from types import *
 
 def search_recipes(ingredient_list):
+    ### pre processing ###
 
     # list that will store id's of input recipes
     input_id_list = list()
@@ -37,27 +38,26 @@ def search_recipes(ingredient_list):
     ## query for all recipes that use ANY of those ingredients
     recipe_query = Recipe.objects.filter(ingredient__in = input_id_list)
 
-
+    # iterate through the queryset of recipes
     for recipe in recipe_query:
+        # get # of recipe ingreds, owned ingreds, and missing ingreds
         recipe_ingreds = Ingredient.objects.filter(recipe = recipe.id)\
             .values_list('id', flat = True)
+
         total_ingred = len(recipe_ingreds)
         ingred_have = len( set(input_id_list) & set(recipe_ingreds) )
-
+        ## missing ingredient count
         missing_ingred = total_ingred - ingred_have
 
+        ## return a tuple of yummly_ids and no. of missing  ingreds
         return_list.append([recipe.yummly_id, missing_ingred])
 
+    # sort the list based on missing ingreds,
+    #   so that closest matches come up first
+    return_list.sort(key=lambda x: x[1])
 
-    print (return_list)
-
-
-    # ## get the ingredients associated with the top single recipe
-    # top_ingreds = Ingredient.objects.filter(recipe = recipe_query[0].id)
-    #
-    # for ingred in top_ingreds:
-    #     return_ingred_list.append(ingred.name)
-
-    # print(return_ingred_list)
-
-    return ("butts")
+    # extract all of the yummly ids
+    rtn = [item[0] for item in return_list]
+    
+    ## return list of yummly_ids
+    return (rtn)

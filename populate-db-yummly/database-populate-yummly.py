@@ -16,7 +16,7 @@ from types import *
 ###################
 hostname = '127.0.0.1'
 username = 'root'
-password = ''
+password = 'root_pw'
 database = 'recipe-db'
 
 db_conn = MySQLdb.connect( host=hostname, user=username, passwd=password,

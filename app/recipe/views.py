@@ -7,6 +7,7 @@ from search import ingredient_search_function
 
 # from .forms import NameForm
 
+
 def get_input(request):
     if request.method == 'GET':
         #search_id is what the user inputs
@@ -14,14 +15,16 @@ def get_input(request):
         if search_id is not None:
             search_id = search_id.split()
             ## call from
-            top_result = ingredient_search_function.search_recipes(search_id)
-            print(top_result)
+            total_results = ingredient_search_function.search_recipes(search_id)
+            top_result = total_results[0]
             #goes to the html page
-            return render(request, 'index.html', {'user_input': top_result})
-    #
-    # ingredient_key = 14
-    # ingredient_name = Ingredient.objects.get(id = ingredient_key).name
+            #
+            # s = "http://api.yummly.com/v1/api/recipe/{}?app_id=YOUR_ID&_app_key=YOUR_APP_KEY".format(top_result)
+            # response = urllib2.urlopen(s)
+            # print (response)
 
+
+            return render(request, 'index.html', {'user_input': top_result})
 
 
     #print "Your input:", search_id --check if input is correct

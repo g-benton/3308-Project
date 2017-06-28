@@ -1,5 +1,4 @@
 from django.conf.urls import include, url
-
 from django.contrib import admin
 admin.autodiscover()
 
@@ -9,5 +8,7 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include('recipe.urls'))
+    url(r'^search/', include('search.urls')),
+    url(r'^$', include('recipe.urls')),
+
 ]

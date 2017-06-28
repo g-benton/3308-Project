@@ -39,6 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'recipe.apps.RecipeConfig',
     'search.apps.SearchConfig',
+    # 'yummly',
+    # 'search',
+    # 'tags_input',
 )
 
 MIDDLEWARE_CLASSES = (

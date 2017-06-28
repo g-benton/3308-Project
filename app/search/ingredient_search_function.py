@@ -16,6 +16,8 @@ def search_recipes(ingredient_list):
     input_id_list = list()
     # list that will contain the recipe and ingredients to return
     return_list = list()
+    # list of yummly id's so that things don't get double entered.
+    found_recipes = list()
 
     # NEED A LIST OF INGREDIENT ID'S!
     for ingred in ingredient_list:
@@ -40,6 +42,7 @@ def search_recipes(ingredient_list):
 
     # iterate through the queryset of recipes
     for recipe in recipe_query:
+
         # get # of recipe ingreds, owned ingreds, and missing ingreds
         recipe_ingreds = Ingredient.objects.filter(recipe = recipe.id)\
             .values_list('id', flat = True)
@@ -48,9 +51,11 @@ def search_recipes(ingredient_list):
         ingred_have = len( set(input_id_list) & set(recipe_ingreds) )
         ## missing ingredient count
         missing_ingred = total_ingred - ingred_have
-
-        ## return a tuple of yummly_ids and no. of missing  ingreds
-        return_list.append([recipe.yummly_id, missing_ingred])
+        # if (not recipe.yummly_id in return_list[:][0]):
+            ## return a tuple of yummly_ids and no. of missing  ingreds
+        if(not recipe.yummly_id in found_recipes):
+            return_list.append([recipe.yummly_id, missing_ingred])
+            found_recipes.append(recipe.yummly_id)
 
     # sort the list based on missing ingreds,
     #   so that closest matches come up first
@@ -58,6 +63,6 @@ def search_recipes(ingredient_list):
 
     # extract all of the yummly ids
     rtn = [item[0] for item in return_list]
-    
+
     ## return list of yummly_ids
     return (rtn)

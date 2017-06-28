@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1> MATCHED RECIPES</h1>
+</head>
+<ul>
+    {% for recipe in data %}
+        <li>
+            <a href = {{recipe.1}}> {{recipe.0}} </a>
+        </li>
+    {% endfor %}
+</ul>
+</html>

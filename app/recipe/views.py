@@ -16,6 +16,7 @@ def get_input(request):
             search_id = search_id.split()
             ## call from
             total_results = ingredient_search_function.search_recipes(search_id)
+            # print (total_results)
             top_result = total_results[0]
             #goes to the html page
             #

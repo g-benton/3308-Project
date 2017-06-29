@@ -16,6 +16,7 @@ def get_input(request):
             search_id = search_id.split()
             ## call from
             total_results = ingredient_search_function.search_recipes(search_id)
+
             # print (total_results)
             top_result = total_results[0]
             #goes to the html page
@@ -23,8 +24,6 @@ def get_input(request):
             # s = "http://api.yummly.com/v1/api/recipe/{}?app_id=YOUR_ID&_app_key=YOUR_APP_KEY".format(top_result)
             # response = urllib2.urlopen(s)
             # print (response)
-
-
             return render(request, 'index.html', {'user_input': top_result})
 
 

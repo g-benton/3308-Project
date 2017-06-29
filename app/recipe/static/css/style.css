@@ -142,10 +142,10 @@ body {
 }
 
 .hero-image {
-   background-image: url('/static/img/background.png');
-   box-sizing: border-box;
+   /*background-image: url('/static/img/background.png');*/
+   /*box-sizing: border-box;
    min-height: 500px;
-   background-size: cover;
+   background-size: cover;*/
 }
 
 .form-wrapper {

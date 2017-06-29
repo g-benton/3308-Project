@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <button type="button" onClick="history.back(-1)">Add More Ingredients</button>
+    <button type="button" value="Click" onclick="location.href = document.referrer" name="reset">Reset</button>
+
+
     <h1> MATCHED RECIPES</h1>
 </head>
+<body>
 <ul>
     {% for recipe in data %}
         <li>
-            <a href = {{recipe.1}}> {{recipe.0}} </a>
+            <p><a href = {{recipe.1}} target="_blank"> {{recipe.0}} </a>
+                 &nbsp; - &nbsp;Missing Ingredients: {{recipe.2}}
+            </p>
         </li>
     {% endfor %}
 </ul>
+</body>
+
 </html>

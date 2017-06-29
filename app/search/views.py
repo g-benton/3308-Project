@@ -18,7 +18,7 @@ def search_recipes(request, search_id):
     recipe_results = ingredient_search_function.search_recipes(search_id)
     if (recipe_results is None):
         # return recipe_views.get_input(request)
-
+        return render(request, 'index.html')
     test = get_urls.get_urls(recipe_results)
     return render(request, 'base.html', {'data' : test})
     # return render_template('index.html',name=recipe_results)

@@ -6,7 +6,7 @@
 ## allows for a clean try-catch method to look for database entries
 from django.core.exceptions import ObjectDoesNotExist
 ## import the necessary database models
-from recipe.models import Ingredient, Recipe
+from recipes.models import Ingredient, Recipe
 from types import *
 
 def search_recipes(ingredient_list):

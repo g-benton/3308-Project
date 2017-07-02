@@ -14,18 +14,12 @@
 <body>
    <div class="hero-image"></div>
 
-   <div class="form-wrapper">
-     <form class="form" method="GET" > <!--POST will ask for the form resubmission-->
+   {% if data %}
+    <p>{{ data }}</p>
+   {% endif %}
 
-        {% csrf_token %}
-        {{ form }}
-        <div class="text">Simple animated search box</div>
-        <div class="form-group">
-           <input class="button" name="text_input" type="search" placeholder="search" value="{{ current_name }}">
-           <input id="myBtn" class="flexsearch--submit" type="submit" value="&#10140;" />
-        </div>
-     </form>
-   </div>
+    {% block content %}
+    {% endblock %}
 
   <!-- <input class="button" placeholder="Search..." /> -->
   <script src='https://use.edgefonts.net/amaranth.js'></script>

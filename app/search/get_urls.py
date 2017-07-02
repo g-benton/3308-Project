@@ -4,7 +4,7 @@
 ########################
 from django.core.exceptions import ObjectDoesNotExist
 ## import the necessary database models
-from recipe.models import Ingredient, Recipe
+from recipes.models import Ingredient, Recipe
 import requests
 from types import *
 

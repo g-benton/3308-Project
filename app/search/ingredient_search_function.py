@@ -5,6 +5,7 @@
 ###################
 ## allows for a clean try-catch method to look for database entries
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
 ## import the necessary database models
 from recipe.models import Ingredient, Recipe, Recipe
 import requests
@@ -41,7 +42,9 @@ def search_recipes(ingredient_list):
         ingred = ingred.strip(",")
         ## filter results to see if anything comes back
         # returns a queryset
-        query_result = Ingredient.objects.filter(name = ingred)
+        query_result = Ingredient.objects.filter(name__contains = ingred)
+        # ob_list = data.objects.filter(reduce(lambda x, y: x | y,\
+        #     [Q(name__contains=word) for word in list]))
         if (len(query_result) > 0):
             # print(query_result[0].id)
             # if there is an ingredient with that name, then include its id.
@@ -76,11 +79,13 @@ def search_recipes(ingredient_list):
                             ingred_entry = Ingredient.objects.get(name = rec_ingred)
                             rec_entry.ingredient_set.add(ingred_entry)
 
-                ## now attempt to append
-                ingred_query = Ingredient.objects.filter(name = ingred)
-                if (len(query_result) > 0):
-                    # print("HERHERHEHREHREHHERHERHEHREHRHE")
-                    input_id_list.append(query_result[0].id)
+
+
+            ## now attempt to append
+            ingred_query = Ingredient.objects.filter(name = ingred)
+            if (len(ingred_query) > 0):
+                # print("HERHERHEHREHREHHERHERHEHREHRHE")
+                input_id_list.append(ingred_query[0].id)
 
 
     #### THE CANCEL OPTION IF THE USER JUST HITS ENTER OR ONLY ENTERS GARBAGEfdjslkjfldas

@@ -71,14 +71,14 @@
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   border: none;
-  font: normal 25px/2 "impact", Helvetica, sans-serif;
+  font: normal 35px "Josefin Slab", Helvetica, sans-serif;
   color: white; /*enter ingredients*/
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: .2em;
   margin-bottom: 5%;
-  margin-top: 25%;
+  margin-top: 5%;
 
 }
 

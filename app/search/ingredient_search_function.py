@@ -7,7 +7,7 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
 ## import the necessary database models
-from recipe.models import Ingredient, Recipe, Recipe
+from recipes.models import Ingredient, Recipe
 import requests
 ## import database functions to allow db inserts
 # from search.database_call_functions import insert_ingredient, insert_recipe
@@ -24,6 +24,7 @@ APP_KEY = "8ee53c9ae94336719dfbed1bb6a5c50a"
 # base url for api calls
 BASE_URL = ("http://api.yummly.com/v1/api/recipes?_app_id=" +
     APP_ID + "&_app_key=" + APP_KEY + "&q=")
+
 
 def search_recipes(ingredient_list):
     ### pre processing ###

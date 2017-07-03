@@ -37,11 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recipe.apps.RecipeConfig',
+    'recipes.apps.RecipesConfig',
     'search.apps.SearchConfig',
-    # 'yummly',
-    # 'search',
-    # 'tags_input',
+    # 'recipe'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,7 +58,7 @@ ROOT_URLCONF = 'recipe_finder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'debug': True,
@@ -153,6 +151,7 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
+    '/usr/src/app/static/'
 )
 
 # Simplified static file serving.

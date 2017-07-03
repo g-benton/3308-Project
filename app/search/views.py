@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from recipe.models import Ingredient, Recipe
+from recipes.models import Ingredient, Recipe
 from search import ingredient_search_function
 from search import get_urls
 from django.core import serializers
-from recipe import views as recipe_views
+from recipes import views as recipe_views
 # from dal import autocomplete
 # from .forms import NameForm
 

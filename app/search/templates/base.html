@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <button type="button" onClick="history.back(-1)">Add More Ingredients</button>
-    <button type="button" value="Click" onclick="location.href = document.referrer" name="reset">Reset</button>
-
-
-    <h1> MATCHED RECIPES</h1>
 </head>
 <body>
+<h1> MATCHED RECIPES</h1>
 <ul>
     {% for recipe in data %}
         <li>

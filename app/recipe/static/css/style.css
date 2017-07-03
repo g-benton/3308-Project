@@ -5,78 +5,33 @@
  margin: 0;
  padding: 0;
 }
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 .button {
-  display: inline-block;
+   display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 80%;
+  width: 20%;
   height: 42px;
   cursor: I-beam;
-  top: 0;
+  /*align-content: center;*/
+  /*top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0;*/
   padding: 0 20px;
   overflow: hidden;
   border: none;
   -webkit-border-radius: 21px;
   border-radius:10px;
   font: normal 20px/normal "Antic", Helvetica, sans-serif;
-  color: rgba(140, 140, 140, 1);
+  color:  #000000;
+  /*color: rgba(140, 140, 140, 1);*/
+  color: #ffffff;
   text-decoration: normal;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  background: rgba(40, 40, 40, 0.4);
+  /*color of search box*/
+  background: #c6c8cf;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5) inset;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5) inset;
   -webkit-transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
@@ -88,8 +43,9 @@ table {
 .button:hover {
   width: 350px;
   opacity: 0.82;
-  color: rgba(181, 181, 181, 1);
-  background: rgba(0, 0, 0, 0.4);
+  color: #c6c8cf;
+  /*color: rgba(181, 181, 181, 1);*/
+  /*background: rgba(0, 0, 0, 0.4);*/
   -webkit-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
   -moz-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
   -o-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
@@ -99,8 +55,11 @@ table {
 .button:focus {
   width: 490px;
   cursor: default;
+  opacity: 0.9;
+  background: #c6c8cf;
+
   padding: -13px 20px 0;
-  color: rgba(255, 255, 255, 1);
+  color: #747B82; /*typing color*/
   -webkit-transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
   -moz-transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
   -o-transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
@@ -112,12 +71,15 @@ table {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   border: none;
-  font: normal 25px/1 "amaranth", Helvetica, sans-serif;
-  color: #ffffff;
-  text-align: center;
+  font: normal 25px/2 "impact", Helvetica, sans-serif;
+  color: white; /*enter ingredients*/
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: .2em;
+  margin-bottom: 5%;
+  margin-top: 25%;
+
 }
 
 input {
@@ -128,27 +90,55 @@ input:focus {
   outline: none;
 }
 
-body {
-   /*background-image: url("https://www.google.com/search?q=food&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjH55XomOHUAhWc8oMKHRu7AdkQ_AUICygC&biw=1276&bih=699#tbm=isch&q=food+background&imgrc=Dinh-P_rEDQBDM");*/
-  background-image: url("https://i.redd.it/3lxlwac0rfmx.png");
-  /*background-image: url('img/background.png');*/
-  /*background-attachment: fixed;*/
+.form-group{
+   align-content: center;
 }
 
-.form-group {
+/*.form-wrapper{
+   display: flex;
+   margin-top: 0%;
    box-sizing: border-box;
-   max-width: 40%;
-   margin: 0 auto;
-}
+   max-width: 100%;
+   align-content: center;
+   padding-top: 0px;
+}*/
 
-.hero-image {
-   background-image: url('/static/img/background.png');
-   box-sizing: border-box;
-   min-height: 500px;
-   background-size: cover;
+.form {
+   align-content: center;
+   text-align: center;
+   /*display: flex;*/
 }
 
 .form-wrapper {
    width: 100%;
    margin: 0 auto;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #97BFA1;
+}
+/*--------------------SHEEP----------------*/
+.container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+    width: auto;
+}
+
+svg, use {
+  display: block;
 }

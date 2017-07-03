@@ -82,7 +82,7 @@ def search_recipes(ingredient_list):
 
 
             ## now attempt to append
-            ingred_query = Ingredient.objects.filter(name = ingred)
+            ingred_query = Ingredient.objects.filter(name__contains = ingred)
             if (len(ingred_query) > 0):
                 # print("HERHERHEHREHREHHERHERHEHREHRHE")
                 input_id_list.append(ingred_query[0].id)

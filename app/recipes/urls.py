@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     # /recipes/
-    url(r'^$', views.index),
+    url(r'^$', views.index, name='index'),
 
     # meant to handle searching, will return a redirect to 'results'
     # /recipes/search/

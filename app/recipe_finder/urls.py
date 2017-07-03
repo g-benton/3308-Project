@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^$', views.home),
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^search/', include('search.urls')),
-    url(r'^recipes/', include('recipes.urls'))
+    url(r'^recipes/', include('recipes.urls', namespace='recipes'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

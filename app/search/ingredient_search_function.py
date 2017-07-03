@@ -5,9 +5,25 @@
 ###################
 ## allows for a clean try-catch method to look for database entries
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
 ## import the necessary database models
-from recipe.models import Ingredient, Recipe
-from types import *
+from recipe.models import Ingredient, Recipe, Recipe
+import requests
+## import database functions to allow db inserts
+# from search.database_call_functions import insert_ingredient, insert_recipe
+# from search.database_call_functions import insert_recipe_ingredient
+
+
+####################
+# Set up API calls
+####################
+# constants for API calls
+APP_ID = "98bc9cb0"
+APP_KEY = "8ee53c9ae94336719dfbed1bb6a5c50a"
+
+# base url for api calls
+BASE_URL = ("http://api.yummly.com/v1/api/recipes?_app_id=" +
+    APP_ID + "&_app_key=" + APP_KEY + "&q=")
 
 def search_recipes(ingredient_list):
     ### pre processing ###
@@ -26,11 +42,50 @@ def search_recipes(ingredient_list):
         ingred = ingred.strip(",")
         ## filter results to see if anything comes back
         # returns a queryset
-        query_result = Ingredient.objects.filter(name = ingred)
+        query_result = Ingredient.objects.filter(name__contains = ingred)
+        # ob_list = data.objects.filter(reduce(lambda x, y: x | y,\
+        #     [Q(name__contains=word) for word in list]))
         if (len(query_result) > 0):
             # print(query_result[0].id)
             # if there is an ingredient with that name, then include its id.
             input_id_list.append(query_result[0].id)
+        else:
+            ############################
+            # If the ingredient isn't found
+            # we can find and insert a recipe containing it
+            ############################
+            # print(BASE_URL + str(ingred))
+            yumm_data = requests.get(BASE_URL + str(ingred)).json()
+            # print(yumm_data)
+            if (len(yumm_data['matches']) > 0):
+                first_recipe = yumm_data['matches'][0]
+
+                # parse out information
+                rec_name = first_recipe['recipeName'].encode('utf-8')
+                if( not Recipe.objects.filter(name  = rec_name).exists()):
+                    # Now we'll need the yummly id for insertion
+                    yumm_id = first_recipe['id']
+                    # create a recipe entry and save it
+                    rec_entry = Recipe.objects.create(name = rec_name, yummly_id = yumm_id)
+                    rec_entry.save() # dont want to do this yet!
+                    # now get and enter all ingredients and store those
+                    # print("NEW RECIPE:   " + str(rec_entry))
+                    rec_ingreds = first_recipe['ingredients']
+                    # print("WITH INGREDIENTS:   " + str(rec_ingreds))
+                    for rec_ingred in rec_ingreds:
+                        if not Ingredient.objects.filter(name = rec_ingred).exists():
+                            rec_entry.ingredient_set.create(name = rec_ingred)
+                        else:
+                            ingred_entry = Ingredient.objects.get(name = rec_ingred)
+                            rec_entry.ingredient_set.add(ingred_entry)
+
+
+
+            ## now attempt to append
+            ingred_query = Ingredient.objects.filter(name = ingred)
+            if (len(ingred_query) > 0):
+                # print("HERHERHEHREHREHHERHERHEHREHRHE")
+                input_id_list.append(ingred_query[0].id)
 
 
     #### THE CANCEL OPTION IF THE USER JUST HITS ENTER OR ONLY ENTERS GARBAGEfdjslkjfldas
@@ -65,4 +120,4 @@ def search_recipes(ingredient_list):
     rtn = [item[0] for item in return_list]
 
     ## return list of yummly_ids
-    return (rtn)
+    return (return_list)

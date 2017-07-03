@@ -24,15 +24,18 @@ def get_urls(recipe_list):
 
     rtn_index = 0
     for recipe in recipe_list:
+        rec_name = recipe[0]
+        miss_ing = recipe[1]
         return_data.append(list())
         # make api call and convert to json
-        yumm_data = requests.get(BASE_URL + str(recipe) + END_URL)
+        yumm_data = requests.get(BASE_URL + str(rec_name) + END_URL)
         yumm_data = yumm_data.json()
 
         # enter data from json
         return_data[rtn_index].append(yumm_data['name'])
         return_data[rtn_index].append(yumm_data['attribution']['url'])
-
+        return_data[rtn_index].append(yumm_data['images'][0]['hostedMediumUrl'])
+        return_data[rtn_index].append(miss_ing)
         ### THIS ISN'T WORKING
         # images.append(yumm_data['images']['hostedSmallUrl'])
         rtn_index += 1

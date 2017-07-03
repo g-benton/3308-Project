@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="form-wrapper"> 
+
+        <form class="search-form" action="{% url 'recipes:search_form' %}" method="POST" > <!--POST will ask for the form resubmission-->
+
+            <div class="form-group">
+
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+
+                <input type="submit" name="Submit">
+            </div>
+
+        </form>
+
+    </div>
+
+{% endblock %}

@@ -13,7 +13,7 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^$', views.home),
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^search/', include('search.urls')),
+    # url(r'^search/', include('recipes.views.search'), name='search_recipes'),
     url(r'^recipes/', include('recipes.urls', namespace='recipes'))
 ]
 

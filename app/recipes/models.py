@@ -8,11 +8,14 @@ class Recipe(models.Model):
     yummly_id = models.CharField(max_length=1000)
     # text = models.CharField(max_length=1000)
     # link = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.name
 
     # TODO: add views, likes, maybe comments?
-    # class Meta:
-    #     db_table = "recipes"
-    #     default_related_name = "recipes"
+    class Meta:
+        db_table = "recipes"
+        default_related_name = "recipes"
         # NOTE: possible to implement our own default recipe ordering here
                 
 
@@ -22,9 +25,12 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=200)
     recipe = models.ManyToManyField("Recipe")
 
-    # class Meta:
-    #     db_table = "ingredients"
-    #     default_related_name = "ingredients"
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        db_table = "ingredients"
+        default_related_name = "ingredients"
 
 
 # TODO: add measurement model

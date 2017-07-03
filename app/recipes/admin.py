@@ -6,7 +6,7 @@ class IngredientInline(admin.StackedInline):
     model = Ingredient
 
 class RecipeAmin(admin.ModelAdmin):
-    inlines = [StepInline,]
+    inlines = [IngredientInline,]
 
 admin.site.register(Recipe)
 admin.site.register(Ingredient)

@@ -6,7 +6,7 @@
  padding: 0;
  display: flex;
 }
-#id_seach_terms {
+.button {
    display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -41,7 +41,7 @@
   transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
 
-#id_seach_terms:hover {
+.button:hover {
   width: 350px;
   opacity: 0.82;
   color: #c6c8cf;
@@ -53,7 +53,7 @@
   transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
 
-#id_seach_terms:focus {
+.button:focus {
   width: 490px;
   cursor: default;
   opacity: 0.9;
@@ -67,12 +67,12 @@
   transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
 
-.form-group label {
+.text {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   border: none;
-  font: normal 35px "Josefin Slab", Helvetica, sans-serif;
+  font: normal 35px/normal "Antic", Helvetica, sans-serif;
   color: white; /*enter ingredients*/
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;

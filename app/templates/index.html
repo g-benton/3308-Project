@@ -16,18 +16,18 @@
 </head>
 
 <body>
-   <!-- <div class="form-wrapper"> -->
+   <div class="form-wrapper">
      <form class="form" method="GET" > <!--POST will ask for the form resubmission-->
 
         {% csrf_token %}
         {{ form }}
-        <div class="text">enter ingredients you have and lets get grazing</div>
+        <div class="text">enter ingredients</div>
         <div class="form-group">
            <input class="button" name="text_input" type="search" placeholder="search" value="{{ current_name }}">
            <!-- <input id="myBtn" class="flexsearchsubmit" type="submit" value="&#10140;" /> -->
         </div>
      </form>
-   <!-- </div> -->
+   </div>
 <!-- source for sheep : https://codepen.io/anon/pen/xrYRqZ -->
    <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: -9999px;">
              <symbol id="sheep-eating" viewBox="0 0 124 77">

@@ -12,12 +12,13 @@ html {
 body {
   margin: 0px;
   padding: 0px;
-background: linear-gradient(140deg, rgba(68,53,86,1) 0%,rgba(36,56,76,1) 100%);
+  background: green;
+  /*background: linear-gradient(140deg, rgba(68,53,86,1) 0%,rgba(36,56,76,1) 100%);*/
   font-family: 'Open Sans', sans-serif;
   color: #FFFFFF;
 }
 
-#wrapper{ 
+#wrapper{
   width: 391px;
   margin: 0px auto;
 }

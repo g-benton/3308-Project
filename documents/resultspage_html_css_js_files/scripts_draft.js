@@ -1,10 +1,7 @@
-$('.button').click(function(){
-  $('.photo-wrap').addClass('love');
-  $('.photo').addClass('match');
+/* Below fancy_scroll:  Implement bounce feature in 
+overflow scrolling.  See https://github.com/peachananr/fancy-scroll 
+to implement additional features. */
 
-  
-setTimeout(function () { 
-  $('.photo').removeClass('match');
-  $('.photo-wrap').removeClass('love');
-}, 2000);
+$(window).fancy_scroll({
+  animation: "bounce" 
 });

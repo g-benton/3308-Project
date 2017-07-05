@@ -133,6 +133,7 @@ p{
 .button:active {
   transform: scale(0.9);
   transition: all 200ms;
+  /*Line below:  sliding button effect for Yes and No; */
   transform: translateX(50%);
 }
 
@@ -161,4 +162,6 @@ tinder ui:
 -https://codepen.io/anon/pen/awKpwv
 bootstrap navigation template:
 -http://getbootstrap.com/components/#navbar-component-alignment
+js overflow scrolling effect
+-https://github.com/peachananr/fancy-scroll
 */

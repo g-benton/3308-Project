@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!-- Inserting index_new_draft.html -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Search Results Page</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style_draft.css">    
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!-- Link to js plugin file saved in same directory as this html file-->
+    <script type="text/javascript" src="static/js/jquery.fancy-scroll.js"></script>
+    <!-- Link to separate js file with effect code-->
+    <script src="static/js/scripts_draft.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
 <h1> MATCHED RECIPES</h1>
@@ -15,6 +41,47 @@
         </li>
     {% endfor %}
 </ul>
+
+<!-- Inserting index_new_draft.html-->
+
+<h1>Recipe Results</h1>
+	<!-- Below:  buttons to appear at top of each graze page to allow user to perform additional actions -->
+	<!-- Bootstrap tool bar across top -->
+	<button onclick=window.history.back()>Add More Ingredients</button>
+	<button onclick=location.replace(document.referrer)>New Search</button>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) CDN Source Below:  Google Hosted Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--script src="scripts_draft.js"></script-->
+
+<!-- Below:  Inserted codepen tinder UI html block: Start -->
+    <div id="wrapper">
+  <div class="module" class="btcf">
+  <h1>View Recipe?</h1>
+  <div class="photo-wrap">
+    <div class="photo" style="background:url('https://www.chowstatic.com/assets/recipe_photos/30175_easy_pumpkin_pie.jpg') no-repeat;  background-position: center; background-size: cover;
+}
+}">
+    </div>
+    <h3>Recipe Name<span class="right">(21)</span></h3>
+  </div>
+</div>
+<!-- Above:  Inserted codepen tinder UI html block: End -->
+
+<!-- Below:  Yes/No buttons to either go to recipe page or continue browsing -->
+<div class="module button" class="btcf">
+  <h1><img src="https://i.imgur.com/rHHDxoS.png"/> Yes</h1>
+</div>
+<div class="module button" class="btcf">
+  <h1><img src="https://i.imgur.com/rHHDxoS.png"/> No</h1>
+</div>
+<!-- Above: Yes/No buttons to either go to recipe page or continue browsing -->
+
+</div>
+
+
 </body>
 
 </html>

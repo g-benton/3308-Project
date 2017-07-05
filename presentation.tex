@@ -1,0 +1,127 @@
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Graze}
+\subtitle{Making food easier.}
+% \date{\today}
+\date{}
+\author{Michael Barlow, Greg Benton, Rasheeq Jahan, Sofia Mehrotra, Erin Ruby}
+\institute{University of Colorado}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}[fragile]{Ideology and Goal}
+
+    Often the hardest part of meal time is asking "what should I make?", to eliminate this familiar culinary woe we wanted,
+    \begin{itemize}
+    	\item A clean, simple, efficient user interface
+
+        \item To take in ingredients or main ideas
+
+        \item To output a straightforward, one by one, list of possible recipes, eliminating the need to decide from a massive list of options
+    \end{itemize}
+
+
+
+\end{frame}
+\begin{frame}[fragile]{Requirements}
+
+	We made a list of requirements to make sure we met our goals of user-focused simplicity, including,
+    \begin{itemize}
+    	\item No user accounts or sign up necessary
+        \item Easy to restart or refresh user progress
+        \item Output user results in a simple and digestible format (i.e. one at a time)
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Methodology}
+	We used the Agile methodology, slightly adapted to fit into the time constraints of the course.
+
+    This meant that (starting at around the third week) we had a scrum nearly every day that class met.
+
+    Sprints were formed on a shortened cycle, with a typical sprint lasting between 3-7 days depending on the scope of our goals
+\end{frame}
+
+\begin{frame}{Sprints}
+	WHAT WERE OUR SPRINTS??
+\end{frame}
+
+
+\begin{frame}{Tools}
+	We used the following resources to build our website,
+    \begin{itemize}
+    	\item \alert{Django} - Our main development platform and service
+        \item \alert{MySQL} - Our database software
+        \item \alert{Docker} - Our containerization service to allow everyone to develop with the same services
+        \item \alert{Heroku} - Our platform for final web hosting
+    \end{itemize}
+\end{frame}
+
+\section{Challenges}
+
+\begin{frame}{Challenges: Initial Setup}
+	One major challenge we faced was getting everyone on the same page with development. We are working on three different operating systems each with its own requirements. Docker was a major help with this, but we encountered an unforeseen delay in setting everyone up with a working development environment.
+\end{frame}
+
+\begin{frame}{Challenges: Data}
+Getting meaningful data.
+\begin{itemize}
+	\item Could enter a small amount of data by hand, but will be limited and time consuming
+    \item Found \textit{Yummly}, a large API that allowed us to build an initial database using python scripts and allows the database to grow as the website is used
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Challenges: }
+
+\end{frame}
+
+\section{Features and Functionality}
+
+\begin{frame}{Feature: Ingredient Input}
+The main function of the website is the user's ability to enter whatever ingredients they have on hand.
+
+The home page of the website is where the user accesses this feature, bypassing any need for logging in or registering, keeping in line with our ease-of-use beliefs.
+\end{frame}
+
+\begin{frame}{Feature: Recipe Retrieval}
+NOT SURE HOW THIS WILL LOOK, NEED TO WAIT
+\end{frame}
+
+
+\begin{frame}{Conclusion}
+ GITHUB LINK, LESSONS LEARNED (friendship), RESULTS
+\end{frame}
+
+{\setbeamercolor{palette primary}{fg=black, bg=yellow}
+\begin{frame}[standout]
+  Questions?\\
+  \tiny (Probably not)
+\end{frame}
+}
+
+
+
+
+\end{document}

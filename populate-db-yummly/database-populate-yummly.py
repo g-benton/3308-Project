@@ -8,7 +8,7 @@ import MySQLdb
 from yummly import Client
 from database_call_functions import item_found, get_id
 from database_call_functions import insert_ingredient, insert_recipe
-from database_call_functions import insert_recipe_ingredient\
+from database_call_functions import insert_recipe_ingredient
 
 from types import *
 ###################

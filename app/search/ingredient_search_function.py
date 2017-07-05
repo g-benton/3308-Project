@@ -28,7 +28,7 @@ BASE_URL = ("http://api.yummly.com/v1/api/recipes?_app_id=" +
 
 def search_recipes(ingredient_list):
     ### pre processing ###
-
+    # print("HIT")
     # list that will store id's of input recipes
     input_id_list = list()
     # list that will contain the recipe and ingredients to return
@@ -62,6 +62,7 @@ def search_recipes(ingredient_list):
                 first_recipe = yumm_data['matches'][0]
 
                 # parse out information
+                # print(yumm_data)
                 rec_name = first_recipe['recipeName'].encode('utf-8')
                 if( not Recipe.objects.filter(name  = rec_name).exists()):
                     # Now we'll need the yummly id for insertion
@@ -73,12 +74,13 @@ def search_recipes(ingredient_list):
                     # print("NEW RECIPE:   " + str(rec_entry))
                     rec_ingreds = first_recipe['ingredients']
                     # print("WITH INGREDIENTS:   " + str(rec_ingreds))
+
                     for rec_ingred in rec_ingreds:
                         if not Ingredient.objects.filter(name = rec_ingred).exists():
-                            rec_entry.ingredient_set.create(name = rec_ingred)
+                            rec_entry.ingredients.create(name = rec_ingred)
                         else:
                             ingred_entry = Ingredient.objects.get(name = rec_ingred)
-                            rec_entry.ingredient_set.add(ingred_entry)
+                            rec_entry.ingredients.add(ingred_entry)
 
 
 
@@ -118,7 +120,7 @@ def search_recipes(ingredient_list):
     return_list.sort(key=lambda x: x[1])
 
     # extract all of the yummly ids
-    rtn = [item[0] for item in return_list]
+    # rtn = [item[0] for item in return_list]
 
     ## return list of yummly_ids
     return (return_list)

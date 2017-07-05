@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +16,14 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!--link rel="stylesheet" href="static/css/style_draft.css"-->    
-	<link rel="stylesheet" type="text/css" href="{% static 'css/style_draft.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_draft.css' %}" />    
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- Link to js plugin file saved in same directory as this html file-->
-    <script type="text/javascript" src="{% static 'js/jquery.fancy-scroll.js' %}"></script>
+    <script type="text/javascript" src="static/js/jquery.fancy-scroll.js"></script>
     <!-- Link to separate js file with effect code-->
-<!--     <script src="static/js/scripts_draft.js"></script>
- -->	<script type="text/javascript" src="{% static 'js/scripts_draft.js' %}"></script>
+    <script src="static/js/scripts_draft.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -53,7 +55,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) CDN Source Below:  Google Hosted Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--script src="scripts_draft.js"></script-->
 
 <!-- Below:  Inserted codepen tinder UI html block: Start -->

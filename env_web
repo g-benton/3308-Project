@@ -1,7 +1,7 @@
 # Add Environment Variables
 DB_NAME=recipe_db
-DB_USER=root
-DB_PASS=root_pw
+DB_USER=db_user1
+DB_PASS=user1pw
 DB_SERVICE=db
 DB_HOST=db
 DB_PORT=3306

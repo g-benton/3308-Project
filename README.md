@@ -1,6 +1,10 @@
 # 3308-Project
 Repository for team project, CSCI 3308
 
+Website name:  Graze <br />
+Hosted by Heroku at : [Graze Website Link](https://h-django.herokuapp.com/recipes/search) <br />
+Recipe Database:  [Yummly API Link](https://developer.yummly.com/)
+
 
 ## Description
 A Django built website that allows users to input ingredients and retrieve recipes using a constructed database and the Yummly API. Constructed with a MySQL database, Django, and built inside Docker containers.

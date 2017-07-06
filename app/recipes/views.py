@@ -11,7 +11,7 @@ from .forms import SearchForm
 # from .forms import NameForm
 
 def welcome(request):
-    return render(request, 'welcome.html')
+    return render(request, 'index.html')
 
 def search(request):
 

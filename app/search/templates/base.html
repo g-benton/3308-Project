@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Recipe</title>
 
     <!-- Inserting index_new_draft.html -->
 
@@ -20,9 +20,12 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- Link to js plugin file saved in same directory as this html file-->
-    <script type="text/javascript" src="static/js/jquery.fancy-scroll.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.fancy-scroll.js' %}"></script>
     <!-- Link to separate js file with effect code-->
-    <script src="static/js/scripts_draft.js"></script>
+    <script src="{% static 'js/scripts_draft.js' %}"></script>
+
+	<button onclick=window.history.back()>Add More Ingredients</button>
+	<button onclick=location.replace(document.referrer)>New Search</button>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,24 +36,22 @@
 
 </head>
 <body>
-   <button onclick=window.history.back()>Add More Ingredients</button>
-   <button onclick=location.replace(document.referrer)>New Search</button>
-
 <h1> MATCHED RECIPES</h1>
 <ul>
     {% for recipe in data %}
-        <!-- <li>
+        <li>
             <p><a href = {{recipe.1}} target="_blank"> {{recipe.0}} </a>
-                 &nbsp; - &nbsp;Missing Ingredients: {{recipe.2}}
+                 &nbsp; - &nbsp;Missing Ingredients: {{recipe.3}}
             </p>
-        </li> -->
-<!-- var photoURL = {{recipe.2}} -->
+        </li>
+
 
 <!-- Inserting index_new_draft.html-->
 
 <h1>Recipe Results</h1>
 	<!-- Below:  buttons to appear at top of each graze page to allow user to perform additional actions -->
 	<!-- Bootstrap tool bar across top -->
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) CDN Source Below:  Google Hosted Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -64,27 +65,28 @@
   <div class="module" class="btcf">
   <h1>View Recipe?</h1>
   <div class="photo-wrap">
-
-    <div class="photo" style="background:url('{{recipe.2}}') no-repeat;  background-position: center; background-size: cover;"></div>
-    <!-- <div class="photo" style="background:url('https://www.chowstatic.com/assets/recipe_photos/30175_easy_pumpkin_pie.jpg') no-repeat;  background-position: center; background-size: cover;"></div> -->
-    <h3>{{recipe.0}}<span class="right"></span></h3>
+    <div class="photo" style="background:url('https://www.chowstatic.com/assets/recipe_photos/30175_easy_pumpkin_pie.jpg') no-repeat;  background-position: center; background-size: cover;
+}
+}">
+    </div>
+    <h3>Recipe Name<span class="right">(21)</span></h3>
   </div>
 </div>
 <!-- Above:  Inserted codepen tinder UI html block: End -->
 
 <!-- Below:  Yes/No buttons to either go to recipe page or continue browsing -->
-<a href = {{recipe.1}} target="_blank">
 <div class="module button" class="btcf">
   <h1><img src="https://i.imgur.com/rHHDxoS.png"/> Yes</h1>
+  <a href = {{recipe.1}} target="_blank"> {{recipe.0}} </a>
 </div>
-</a>
 <div class="module button" class="btcf">
   <h1><img src="https://i.imgur.com/rHHDxoS.png"/> No</h1>
 </div>
 <!-- Above: Yes/No buttons to either go to recipe page or continue browsing -->
 
 </div>
-{% endfor %}
+
+	{% endfor %}
 </ul>
 
 </body>

@@ -16,20 +16,31 @@
 </head>
 
 <body>
+
    <div class="form-wrapper">
      <form class="form" method="GET" > <!--POST will ask for the form resubmission-->
 
         {% csrf_token %}
         {{ form }}
-        <div class="text">enter ingredients</div>
+
+        <div class="text">Enter Ingredients</div>
         <div class="form-group">
            <input class="button" name="text_input" type="search" placeholder="search" value="{{ current_name }}">
            <!-- <input id="myBtn" class="flexsearchsubmit" type="submit" value="&#10140;" /> -->
+
         </div>
+
+
      </form>
+
    </div>
+   <!-- mountain source: https://codepen.io/Mamboleoo/pen/WrgmYJ -->
+   <svg>
+  </svg>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
 <!-- source for sheep : https://codepen.io/anon/pen/xrYRqZ -->
-   <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: -9999px;">
+   <!-- <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: -9999px;">
              <symbol id="sheep-eating" viewBox="0 0 124 77">
          <g id="body" transform="translate(35.866937, 0.000000)">
            <path d="M14.1306677,64.9860738 C14.1306677,64.9860738 13.7928243,78.0285711 17.9057006,76.3054166 C17.9057006,76.3054166 21.5632227,78.1919737 21.4897785,64.7186877 L14.1306677,64.9860738 Z" id="Legs-1" fill="#EAE8E8"></path>
@@ -64,8 +75,9 @@
          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sheep-eating"></use>
        </svg>
      </div>
-   </div>
-  <!-- <input class="button" placeholder="Search..." /> -->
+   </div> -->
+   <!-- source for sheep : https://codepen.io/anon/pen/xrYRqZ -->
+
 
 </body>
 </html>

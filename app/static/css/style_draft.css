@@ -1,7 +1,17 @@
+{% load static %}
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
-* {
-  box-sizing: border-box;
+*,
+*:before;
+*:after {
+ margin: 0;
+ padding: 0;
+ display: flex;
+}
+body{
+  margin:0;
+  overflow: hidden;
+  background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/mountainBG2.jpg) center top / cover;
 }
 
 html {
@@ -9,15 +19,8 @@ html {
   width: 100%;
 }
 
-body {
-  margin: 0px;
-  padding: 0px;
-background: linear-gradient(140deg, rgba(68,53,86,1) 0%,rgba(36,56,76,1) 100%);
-  font-family: 'Open Sans', sans-serif;
-  color: #FFFFFF;
-}
 
-#wrapper{ 
+#wrapper{
   width: 391px;
   margin: 0px auto;
 }
@@ -40,7 +43,6 @@ h3 {
   float: left;
 }
 
-
 .module {
   width: 391px;
   margin: 20px 0 20px 0;
@@ -49,9 +51,9 @@ h3 {
 }
 
  .btcf:after {
-            content:"";
-            display:table;
-            clear:both;
+   content:"";
+   display:table;
+   clear:both;
  }
 
 p{
@@ -136,7 +138,6 @@ p{
   /*Line below:  sliding button effect for Yes and No; */
   transform: translateX(50%);
 }
-
 .love {
   background: url("https://i.imgur.com/rHHDxoS.png") no-repeat;
   background-position: center;

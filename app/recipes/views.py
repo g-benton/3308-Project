@@ -28,7 +28,7 @@ def search(request):
 
 
     #print "Your input:", search_id --check if input is correct
-    return render(request, 'index.html') #goes to the html page
+    return render(request, 'search_form.html') #goes to the html page
 
     # if request.method == 'POST':
     #     # handle search request

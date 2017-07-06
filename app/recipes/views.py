@@ -15,7 +15,6 @@ def welcome(request):
 
 def search(request):
 
-    '''
     if request.method == 'GET':
         #search_id is what the user inputs
         ingred_names = request.GET.get('text_input', None) #text_input is from line 42 in html
@@ -30,23 +29,22 @@ def search(request):
 
     #print "Your input:", search_id --check if input is correct
     return render(request, 'index.html') #goes to the html page
-    '''
 
-    if request.method == 'POST':
-        # handle search request
-        form = SearchForm(request.POST)
-
-        if form.is_valid():
-
-            # process searching to get pk of first recipe
-            primary_key = 4
-
-            return redirect(str(primary_key) + '/')
-    else:
-        # get a empty form
-        form = SearchForm()
-
-    return render(request, 'search_form.html', {'form': form})
+    # if request.method == 'POST':
+    #     # handle search request
+    #     form = SearchForm(request.POST)
+    #
+    #     if form.is_valid():
+    #
+    #         # process searching to get pk of first recipe
+    #         primary_key = 4
+    #
+    #         return redirect(str(primary_key) + '/')
+    # else:
+    #     # get a empty form
+    #     form = SearchForm()
+    #
+    # return render(request, 'search_form.html', {'form': form})
 
 
 
@@ -55,8 +53,8 @@ def search(request):
 
 def recipe_detail(request, pk):
     # recipe = Recipe.objects.get(pk=pk)
-    
-    # 
+
+    #
     recipe = get_object_or_404(Recipe, pk=pk)
     ingredients = recipe.ingredients.all()
 

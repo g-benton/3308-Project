@@ -20,9 +20,12 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- Link to js plugin file saved in same directory as this html file-->
-    <script type="text/javascript" src="static/js/jquery.fancy-scroll.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.fancy-scroll.js' %}"></script>
     <!-- Link to separate js file with effect code-->
-    <script src="static/js/scripts_draft.js"></script>
+    <script src="{% static 'js/scripts_draft.js' %}"></script>
+
+	<button onclick=window.history.back()>Add More Ingredients</button>
+	<button onclick=location.replace(document.referrer)>New Search</button>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +36,7 @@
 
 </head>
 <body>
-<h1> MATCHED RECIPES</h1>
+<h2> MATCHED RECIPES</h2>
 <ul>
     {% for recipe in data %}
         <li>
@@ -41,16 +44,14 @@
                  &nbsp; - &nbsp;Missing Ingredients: {{recipe.3}}
             </p>
         </li>
-    {% endfor %}
-</ul>
+    
 
 <!-- Inserting index_new_draft.html-->
 
 <h1>Recipe Results</h1>
 	<!-- Below:  buttons to appear at top of each graze page to allow user to perform additional actions -->
 	<!-- Bootstrap tool bar across top -->
-	<button onclick=window.history.back()>Add More Ingredients</button>
-	<button onclick=location.replace(document.referrer)>New Search</button>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) CDN Source Below:  Google Hosted Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -76,6 +77,7 @@
 <!-- Below:  Yes/No buttons to either go to recipe page or continue browsing -->
 <div class="module button" class="btcf">
   <h1><img src="https://i.imgur.com/rHHDxoS.png"/> Yes</h1>
+  <a href = {{recipe.1}} target="_blank"> {{recipe.0}} </a>
 </div>
 <div class="module button" class="btcf">
   <h1><img src="https://i.imgur.com/rHHDxoS.png"/> No</h1>
@@ -84,6 +86,8 @@
 
 </div>
 
+	{% endfor %}
+</ul>
 
 </body>
 

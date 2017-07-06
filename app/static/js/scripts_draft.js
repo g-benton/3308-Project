@@ -6,7 +6,7 @@ $(window).fancy_scroll({
   animation: "bounce"
 });
 
-$(function(){
+(function($){
    // var allrecipes = $('.recipelist').children('.singlerecipe');
    var allrecipes = $('.recipelist .singlerecipe');
    var currentrecipe = allrecipes.first();
@@ -42,4 +42,4 @@ $(function(){
    //       next.show();
    // });
    // });
-})();
+})(jQuery);

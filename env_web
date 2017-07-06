@@ -1,4 +1,5 @@
 # Add Environment Variables
+WORK_DIR=/usr/src/app/
 DB_NAME=recipe_db
 DB_USER=db_user1
 DB_PASS=user1pw

@@ -1,4 +1,18 @@
-{% load static %}
+<!-- <a href="{% url 'recipes:search_form' %}">Back to Search</a> -->
+
+
+<html>
+<body>
+<script type="text/javascript"><!--
+setTimeout('Redirect()',0);
+function Redirect()
+{
+  location.href = "{% url 'recipes:search_form' %}";
+}
+// --></script>
+</body>
+</html>
+<!-- {% load static %}
 
 <!doctype html>
 <html lang="en">
@@ -69,4 +83,4 @@
         <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
     </body>
 
-</html>
+</html> -->

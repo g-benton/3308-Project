@@ -1,17 +1,8 @@
 {% load static %}
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-*,
-*:before;
-*:after {
- margin: 0;
- padding: 0;
- display: flex;
-}
-body{
-  margin:0;
-  overflow: hidden;
-  background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/mountainBG2.jpg) center top / cover;
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -19,12 +10,22 @@ html {
   width: 100%;
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+  background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/mountainBG2.jpg) center top / cover;
+  font-family: 'Open Sans', sans-serif;
+  color: #A74C4B;
+}
 
 #wrapper{
   width: 391px;
   margin: 0px auto;
 }
 
+.hidden{
+   display: none;
+}
 h1 {
   font-weight: 300;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
@@ -43,17 +44,18 @@ h3 {
   float: left;
 }
 
+
 .module {
   width: 391px;
   margin: 20px 0 20px 0;
-  border: 1px solid white;
+  border: 2px solid #A74C4B;
   border-radius: 40px;
 }
 
  .btcf:after {
-   content:"";
-   display:table;
-   clear:both;
+            content:"";
+            display:table;
+            clear:both;
  }
 
 p{
@@ -64,7 +66,7 @@ p{
 .photo-wrap {
   width: 280px;
   height: 360px;
-  border: 1px solid white;
+  border: 1px solid #A74C4B;
   animation: reset 600ms ease-in-out;
   border-radius: 20px;
   margin: 0 0 80px 55px;
@@ -138,6 +140,7 @@ p{
   /*Line below:  sliding button effect for Yes and No; */
   transform: translateX(50%);
 }
+
 .love {
   background: url("https://i.imgur.com/rHHDxoS.png") no-repeat;
   background-position: center;

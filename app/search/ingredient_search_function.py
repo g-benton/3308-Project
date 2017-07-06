@@ -35,6 +35,8 @@ def search_recipes(ingredient_list):
     return_list = list()
     # list of yummly id's so that things don't get double entered.
     found_recipes = list()
+    # blahbllahbalhblah.objects.get(herewego)
+    # print("test")
 
     # NEED A LIST OF INGREDIENT ID'S!
     for ingred in ingredient_list:

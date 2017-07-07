@@ -58,7 +58,7 @@ def search_recipes(ingredient_list):
             # we can find and insert a recipe containing it
             ############################
             # print(BASE_URL + str(ingred))
-            print("HIT")
+            # print("HIT")
             yumm_data = requests.get(BASE_URL + str(ingred) +
                 "&requirePictures=true").json()
             # print(yumm_data)

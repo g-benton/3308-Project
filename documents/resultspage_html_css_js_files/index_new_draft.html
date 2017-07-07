@@ -17,6 +17,17 @@
     <!-- Link to separate js file with effect code-->
     <script src="scripts_draft.js"></script>
 
+	<!-- Below:  Bootstrap tooltips: -->
+    <button data-tooltip="Append ingredients to initial search input"  
+    	title="Append ingredients to initial search input" 
+    	onclick=window.history.back()>Add More Ingredients
+    </button>
+	<button data-tooltop="Return to first page to perform start over" 
+		title="Return to first page to perform start over" 
+		onclick=location.replace(document.referrer)>New Search
+	</button>
+	<!-- Above:  Bootstrap tooltips -->
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,10 +37,6 @@
   </head>
   <body>
     <h1>Recipe Results</h1>
-	<!-- Below:  buttons to appear at top of each graze page to allow user to perform additional actions -->
-	<!-- Bootstrap tool bar across top -->
-	<button onclick=window.history.back()>Add More Ingredients</button>
-	<button onclick=location.replace(document.referrer)>New Search</button>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) CDN Source Below:  Google Hosted Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

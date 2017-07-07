@@ -5,3 +5,9 @@ to implement additional features. */
 $(window).fancy_scroll({
   animation: "bounce" 
 });
+
+/* Bootstrap tooltip */
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
